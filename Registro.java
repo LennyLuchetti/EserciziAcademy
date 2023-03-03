@@ -1,10 +1,10 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Registro {
 	
-	private ArrayList<Utente> utenti;
+	private List<Utente> utenti;
 	
-	public Registro(ArrayList<Utente> utenti) {
+	public Registro(List<Utente> utenti) {
 		this.utenti = utenti;
 	}
 
@@ -12,11 +12,11 @@ public class Registro {
 
 	}
 
-	public ArrayList<Utente> getUtenti() {
+	public List<Utente> getUtenti() {
 		return utenti;
 	}
 
-	public void setUtenti(ArrayList<Utente> utenti) {
+	public void setUtenti(List<Utente> utenti) {
 		this.utenti = utenti;
 	}
 }

@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainGestioneRistorante {
 
@@ -7,6 +9,10 @@ public class MainGestioneRistorante {
 		boolean provaAdmin = true;
 		boolean provaCodice = true;
 		Utente utente = new Utente();
+		
+		Registro registro = new Registro();
+		List<Utente> listaUtenti = new ArrayList<Utente>();
+		
 		Scanner name = new Scanner(System.in);
 		Scanner pass = new Scanner(System.in);
 		Scanner verAdmin = new Scanner(System.in);
@@ -18,8 +24,6 @@ public class MainGestioneRistorante {
 		System.out.println("Inserisci una password");
 		String password = pass.nextLine();
 		utente.setPassword(password);
-
-		utente.setId(utente.getId() + 1);
 
 		System.out.println("Sei un admin? \n1: Si \n2: No");
 		while (provaAdmin) {
@@ -47,8 +51,9 @@ public class MainGestioneRistorante {
 				break;
 			}
 		}
-		Registro registro = new Registro();
-		registro.setUtenti(utente);
+		
+		utente.setId(registro.getUtenti().size() + 1);
+		listaUtenti.add(utente);
 
 	}
 
