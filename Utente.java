@@ -59,5 +59,10 @@ public class Utente {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
+
+	@Override
+	public String toString() {
+		return "Utente [nome=" + nome + ", password=" + password + ", id=" + id + ", admin=" + admin + "]";
+	}
 	
 }

@@ -4,15 +4,12 @@ import java.util.List;
 
 public class MainGestioneRistorante {
 
-	public static void registraUtente() {
+	public static Utente registraUtente() {
 
 		boolean provaAdmin = true;
 		boolean provaCodice = true;
 		Utente utente = new Utente();
-		
-		Registro registro = new Registro();
-		List<Utente> listaUtenti = new ArrayList<Utente>();
-		
+
 		Scanner name = new Scanner(System.in);
 		Scanner pass = new Scanner(System.in);
 		Scanner verAdmin = new Scanner(System.in);
@@ -51,16 +48,17 @@ public class MainGestioneRistorante {
 				break;
 			}
 		}
-		
-		utente.setId(registro.getUtenti().size() + 1);
-		listaUtenti.add(utente);
+		return utente;
 
 	}
 
 	public static void main(String[] args) {
 
-		registraUtente();
+		List<Utente> listaUtenti = new ArrayList<Utente>();
+		Utente user = registraUtente();
+		listaUtenti.add(user);
 		
+		System.out.println(listaUtenti.get(0).toString());
 
 	}
 
